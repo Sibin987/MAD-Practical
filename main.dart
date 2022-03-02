@@ -136,6 +136,90 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+// import 'Names.dart';
+//
+// void main() {
+//   runApp(MaterialApp(
+//     home: NewApp(),
+//   ));
+// }
+//
+// class NewApp extends StatefulWidget{
+//   const NewApp({Key? key}): super(key: key);
+//
+//   @override
+//   _NewAppState createState() => _NewAppState();
+// }
+// class _NewAppState extends State<NewApp>{
+//   List<Student> names = [
+//     Student(name: "kushal sankhe",rollno: 56),
+//     Student(name: "Sibin varghese",rollno: 69)
+//   ];
+//
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//       backgroundColor: Colors.grey[200],
+//       appBar: AppBar(
+//         title: Text("NAMES"),
+//         centerTitle: true,
+//         backgroundColor: Colors.grey[500],
+//       ),
+//       body: Column(
+//           children: names.map((e) {
+//             return Text('${e.name}  --  ${e.rollno}');
+//           }).toList()
+//       ),
+//     );
+//   }
+// }
+// import 'package:flutter/material.dart';
+// import 'Names.dart';
+//
+// void main() {
+//   runApp(MaterialApp(
+//     home: NewApp(),
+//   ));
+// }
+//
+// class NewApp extends StatefulWidget{
+//   const NewApp({Key? key}): super(key: key);
+//
+//   @override
+//   _NewAppState createState() => _NewAppState();
+// }
+// class _NewAppState extends State<NewApp>{
+//   List<Student> names = [
+//     Student(name: "Shashank",rollno: 40),
+//     Student(name: "Shashank",rollno: 40)
+//   ];
+//
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//       backgroundColor: Colors.grey[200],
+//       appBar: AppBar(
+//         title: Text("NAMES"),
+//         centerTitle: true,
+//         backgroundColor: Colors.grey[500],
+//       ),
+//       body: Padding(
+//
+//         padding: EdgeInsets.fromLTRB(50.0,50.0,10.0,10.0),
+//         child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: names.map((e) => Card(
+//               child: Text('${e.name}   --  ${e.rollno}'),
+//             )).toList()
+//         ),
+//
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'Names.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -143,69 +227,37 @@ void main() {
   ));
 }
 
-class NewApp extends StatelessWidget {
-  int counter=0;
-  NewApp({Key? key}) : super(key: key);
+class NewApp extends StatefulWidget{
+  const NewApp({Key? key}): super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  _NewAppState createState() => _NewAppState();
+}
+class _NewAppState extends State<NewApp>{
+  List<Student> names = [
+    Student(name: "Shashank",rollno: 40),
+    Student(name: "Shashank",rollno: 40)
+  ];
+
+  @override
+  Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text(
-            "Hello Wordl"
-        ),
+        title: Text("NAMES"),
         centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        counter+=1;
-        print("$counter You CLicked");
-      },
-        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[500],
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 30.0, 10.0, 0.0),
+
+        padding: EdgeInsets.fromLTRB(50.0,50.0,10.0,10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: const [
-                Text('name',
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-                SizedBox(width: 60.0,),
-                Text('Click',
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(width: 30.0,),
-            Row(
-              children: [
-                Text('Sibin',
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-                SizedBox(width: 60.0,),
-                Text('$counter',
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold
-                  ),
-                )
-              ],
-            ),
-          ],
+            children: names.map((e) => Card(
+              child: Text('${e.name}   --  ${e.rollno}'),
+            )).toList()
         ),
+
       ),
     );
   }
